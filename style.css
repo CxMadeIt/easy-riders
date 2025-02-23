@@ -1,12 +1,12 @@
 /* Modern UI styles */
 :root {
   --primary-color: #006B5E;
-  --primary-light: #008374;
-  --primary-dark: #004a41;
-  --secondary-color: #222;
-  --text-color: #fff;
-  --background-color: #000;
-  --accent-color: #333;
+  --primary-dark: #005347;
+  --accent-color: #00897B;
+  --text-color: #FFFFFF;
+  --bg-color: #001F2D;
+  --card-bg: #FFFFFF;
+  --card-text: #333333;
   --transition: all 0.3s ease;
 }
 
@@ -18,9 +18,12 @@
 
 body {
   font-family: 'Segoe UI', Arial, sans-serif;
-  background-color: var(--background-color);
+  background-color: var(--bg-color);
   color: var(--text-color);
   line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 /* Header styles */
@@ -132,7 +135,7 @@ body {
   background: 
     radial-gradient(circle at top right, rgba(0, 107, 94, 0.2), transparent 50%),
     radial-gradient(circle at bottom left, rgba(0, 107, 94, 0.15), transparent 50%),
-    linear-gradient(45deg, var(--background-color) 0%, var(--accent-color) 100%);
+    linear-gradient(45deg, var(--bg-color) 0%, var(--accent-color) 100%);
   display: flex;
   align-items: center;
   text-align: center;
@@ -201,7 +204,7 @@ body {
 }
 
 .primary-btn:hover {
-  background-color: var(--primary-light);
+  background-color: var(--primary-dark);
   transform: translateY(-2px);
   box-shadow: 0 4px 15px rgba(0, 107, 94, 0.3);
 }
@@ -299,7 +302,7 @@ body {
 
 /* Footer styles */
 .modern-footer {
-  background-color: var(--secondary-color);
+  background-color: var(--bg-color);
   padding: 4rem 2rem 1rem;
 }
 
@@ -359,7 +362,7 @@ body {
 
 .preview-link {
   background-color: var(--primary-color);
-  color: white;
+  color: var(--text-color);
   padding: 0.5rem 1rem;
   border-radius: 4px;
   text-decoration: none;
@@ -384,7 +387,7 @@ body {
 
 .audio-message {
   background: var(--primary-color);
-  color: white;
+  color: var(--text-color);
   padding: 0.5rem 1rem;
   border-radius: 20px;
   font-size: 0.9rem;
