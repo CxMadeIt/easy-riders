@@ -385,6 +385,29 @@ body {
   margin: 2rem 0;
 }
 
+.audio-btn {
+  background: var(--primary-color);
+  border: none;
+  border-radius: 50%;
+  width: 3.5rem;
+  height: 3.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.audio-icon {
+  font-size: 1.4rem;
+}
+
+.audio-btn:hover {
+  transform: scale(1.1);
+  background: var(--primary-dark);
+}
+
 .audio-message {
   position: absolute;
   top: -2rem;
@@ -413,6 +436,15 @@ body {
 
 /* Mobile responsive adjustments */
 @media (max-width: 768px) {
+  .audio-btn {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  .audio-icon {
+    font-size: 1.2rem;
+  }
+
   .audio-controls {
     margin: 1.5rem 0;
   }
