@@ -381,13 +381,13 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  gap: 3rem;
+  justify-content: flex-start;
+  gap: 2rem;
   margin: 0 auto 2rem auto;
   width: 100%;
   text-align: center;
   position: relative;
-  padding-top: 4rem;
+  min-height: 8rem;
 }
 
 .audio-message {
@@ -398,12 +398,12 @@ body {
   font-size: 1rem;
   animation: bounce 2s infinite;
   box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  white-space: nowrap;
-  z-index: 10;
+  margin-bottom: 1rem;
+  display: inline-block;
+}
+
+.audio-btn-container {
+  margin-top: 1rem;
 }
 
 .audio-btn {
@@ -418,9 +418,6 @@ body {
   justify-content: center;
   box-shadow: 0 2px 5px rgba(0,0,0,0.2);
   transition: var(--transition);
-  margin: 0 auto;
-  position: relative;
-  z-index: 5;
 }
 
 .audio-btn:hover {
@@ -438,19 +435,19 @@ body {
 
 @keyframes bounce {
   0%, 100% {
-    transform: translateX(-50%) translateY(0);
+    transform: translateY(0);
   }
   50% {
-    transform: translateX(-50%) translateY(-10px);
+    transform: translateY(-10px);
   }
 }
 
 /* Mobile responsive adjustments */
 @media (max-width: 768px) {
   .audio-controls {
-    padding-top: 3.5rem;
-    gap: 2rem;
+    gap: 1.5rem;
     margin: 1rem auto 2rem auto;
+    min-height: 7rem;
   }
 
   .audio-message {
@@ -460,11 +457,16 @@ body {
     white-space: normal;
     text-align: center;
     max-width: 90%;
+    margin-bottom: 0.5rem;
   }
 
   .audio-btn {
     width: 2.5rem;
     height: 2.5rem;
+  }
+
+  .audio-btn-container {
+    margin-top: 0.5rem;
   }
 }
 
