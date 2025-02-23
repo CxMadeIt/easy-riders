@@ -381,9 +381,11 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   gap: 1rem;
-  margin-bottom: 2rem;
+  margin: 0 auto 2rem auto;
   width: 100%;
+  text-align: center;
 }
 
 .audio-message {
@@ -394,6 +396,8 @@ body {
   font-size: 0.9rem;
   animation: bounce 2s infinite;
   box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  display: inline-block;
+  margin: 0 auto;
 }
 
 .audio-btn {
@@ -407,7 +411,8 @@ body {
   align-items: center;
   justify-content: center;
   box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-  transition: all 0.3s ease;
+  transition: var(--transition);
+  margin: 0 auto;
 }
 
 .audio-btn:hover {
@@ -423,12 +428,21 @@ body {
   font-size: 1rem;
 }
 
-@keyframes bounce {
-  0%, 100% {
-    transform: translateY(0);
+/* Mobile responsive adjustments */
+@media (max-width: 768px) {
+  .audio-controls {
+    margin: 1rem auto 2rem auto;
+    padding: 0;
+    width: 100%;
   }
-  50% {
-    transform: translateY(-5px);
+
+  .audio-message {
+    width: auto;
+    text-align: center;
+  }
+
+  .audio-btn {
+    margin: 0 auto;
   }
 }
 
