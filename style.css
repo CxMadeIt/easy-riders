@@ -5,7 +5,7 @@
   --accent-color: #00897B;
   --text-color: #FFFFFF;
   --bg-color: #001F2D;
-  --card-bg: #FFFFFF;
+  --card-bg: rgba(255, 255, 255, 0.95);
   --card-text: #333333;
   --transition: all 0.3s ease;
 }
@@ -17,7 +17,7 @@
 }
 
 body {
-  font-family: 'Segoe UI', Arial, sans-serif;
+  font-family: 'Poppins', sans-serif;
   background-color: var(--bg-color);
   color: var(--text-color);
   line-height: 1.6;
