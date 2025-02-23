@@ -431,6 +431,151 @@ body {
   }
 }
 
+/* Timer styles */
+.launch-timer {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.timer-item {
+  text-align: center;
+  background: var(--bg-color);
+  padding: 1rem;
+  border-radius: 15px;
+  min-width: 100px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.timer-value {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: var(--text-color);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  margin-bottom: 0.5rem;
+}
+
+.timer-label {
+  color: var(--accent-color);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Form styles */
+.notify-container {
+  margin: 2rem 0;
+}
+
+.notify-container form {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.notify-container input {
+  padding: 1rem 1.5rem;
+  border: 2px solid var(--bg-color);
+  border-radius: 8px;
+  font-size: 1rem;
+  outline: none;
+  transition: var(--transition);
+  min-width: 300px;
+  background: var(--bg-color);
+  color: var(--text-color);
+}
+
+.notify-container input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.notify-container input:focus {
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 2px rgba(0, 137, 123, 0.2);
+}
+
+.notify-container button {
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: var(--transition);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.notify-container button:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-2px);
+}
+
+/* Taxi animation */
+.taxi-animation {
+  background: var(--bg-color);
+  border-radius: 15px;
+  padding: 2rem;
+  margin: 2rem auto;
+  position: relative;
+  overflow: hidden;
+  max-width: 600px;
+}
+
+.road {
+  position: relative;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.2);
+  margin: 40px 0;
+}
+
+.lines {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  background: repeating-linear-gradient(
+      90deg,
+      var(--text-color) 0px,
+      var(--text-color) 50px,
+      transparent 50px,
+      transparent 100px
+  );
+  animation: moveLines 2s linear infinite;
+}
+
+.taxi {
+  width: 80px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 20px;
+  animation: bounce 1s ease-in-out infinite;
+}
+
+@keyframes moveLines {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100px);
+  }
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  50% {
+    transform: translateX(-50%) translateY(-10px);
+  }
+}
+
+/* Responsive styles */
 @media (max-width: 768px) {
   .hero h1 {
     font-size: 3rem;
@@ -543,5 +688,34 @@ body {
   .audio-message {
     font-size: 0.8rem;
     padding: 0.4rem 0.8rem;
+  }
+
+  .launch-timer {
+    gap: 1rem;
+  }
+
+  .timer-item {
+    min-width: 70px;
+    padding: 0.8rem;
+  }
+
+  .timer-value {
+    font-size: 1.8rem;
+  }
+
+  .timer-label {
+    font-size: 0.8rem;
+  }
+
+  .notify-container form {
+    padding: 0 1rem;
+  }
+
+  .notify-container input {
+    min-width: 100%;
+  }
+
+  .notify-container button {
+    width: 100%;
   }
 }
