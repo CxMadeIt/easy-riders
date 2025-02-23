@@ -1,0 +1,224 @@
+:root {
+    --primary-color: #006B5E;
+    --secondary-color: #222;
+    --text-color: #fff;
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, var(--secondary-color) 0%, var(--primary-color) 100%);
+    color: var(--text-color);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    text-align: center;
+    padding: 2rem;
+    max-width: 800px;
+    width: 100%;
+}
+
+.logo-container {
+    margin-bottom: 3rem;
+}
+
+.logo {
+    max-width: 200px;
+    height: auto;
+    filter: brightness(1.1);
+}
+
+.content {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 3rem;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.tagline {
+    font-size: 1.2rem;
+    margin-bottom: 3rem;
+    opacity: 0.9;
+}
+
+.launch-timer {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.timer-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.timer-item span:first-child {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.label {
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+.notify-container {
+    margin-bottom: 2rem;
+}
+
+input[type="email"] {
+    padding: 1rem;
+    width: 100%;
+    max-width: 300px;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--text-color);
+    backdrop-filter: blur(5px);
+}
+
+input[type="email"]::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+button {
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 5px;
+    background: var(--primary-color);
+    color: var(--text-color);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+button:hover {
+    background: #008573;
+    transform: translateY(-2px);
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.social-link {
+    color: var(--text-color);
+    text-decoration: none;
+    opacity: 0.8;
+    transition: var(--transition);
+}
+
+.social-link:hover {
+    opacity: 1;
+}
+
+/* Taxi Animation */
+.taxi-animation {
+    position: relative;
+    height: 120px;
+    margin: 2rem 0;
+    overflow: hidden;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+
+.road {
+    position: absolute;
+    bottom: 30px;
+    width: 100%;
+    height: 3px;
+    background: rgba(255, 255, 255, 0.8);
+}
+
+.lines {
+    position: absolute;
+    top: 0;
+    width: 200%;
+    height: 100%;
+    background: linear-gradient(to right, var(--text-color) 50%, transparent 50%);
+    background-size: 20px 100%;
+    animation: moveLines 0.5s linear infinite;
+}
+
+.taxi {
+    position: absolute;
+    left: 50%;
+    bottom: 33px;
+    transform: translateX(-50%);
+    width: 80px;
+    height: auto;
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.3));
+    animation: bounceTaxi 0.6s ease-in-out infinite;
+}
+
+@keyframes moveLines {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-20px);
+    }
+}
+
+@keyframes bounceTaxi {
+    0%, 100% {
+        transform: translateX(-50%) translateY(0);
+    }
+    50% {
+        transform: translateX(-50%) translateY(-4px);
+    }
+}
+
+/* Add hover effect to the taxi */
+.taxi:hover {
+    animation: shakeTaxi 0.3s ease-in-out infinite;
+}
+
+@keyframes shakeTaxi {
+    0%, 100% {
+        transform: translateX(-50%) rotate(0deg);
+    }
+    25% {
+        transform: translateX(-50%) rotate(3deg);
+    }
+    75% {
+        transform: translateX(-50%) rotate(-3deg);
+    }
+}
+
+@media (max-width: 768px) {
+    .launch-timer {
+        gap: 1rem;
+    }
+    
+    .timer-item span:first-child {
+        font-size: 2rem;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+    
+    .content {
+        padding: 2rem;
+    }
+}

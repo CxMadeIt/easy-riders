@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="120" height="60" viewBox="0 0 120 60" xmlns="http://www.w3.org/2000/svg">
+    <!-- Car Body -->
+    <path d="M15 42 L25 42 L30 32 L85 32 L90 42 L105 42 L105 45 L15 45 Z" fill="#FFD700" stroke="#000" stroke-width="1.5"/>
+    <!-- Hood -->
+    <path d="M30 32 L25 42 L15 42 L20 32 Z" fill="#FFD700" stroke="#000" stroke-width="1.5"/>
+    <!-- Trunk -->
+    <path d="M85 32 L90 42 L105 42 L100 32 Z" fill="#FFD700" stroke="#000" stroke-width="1.5"/>
+    <!-- Roof -->
+    <path d="M35 32 L40 20 L80 20 L85 32 Z" fill="#FFD700" stroke="#000" stroke-width="1.5"/>
+    <!-- Windows -->
+    <path d="M40 20 L43 25 L77 25 L80 20" fill="none" stroke="#000" stroke-width="1.5"/>
+    <path d="M45 25 L42 32" fill="none" stroke="#000" stroke-width="1.5"/>
+    <path d="M75 25 L78 32" fill="none" stroke="#000" stroke-width="1.5"/>
+    <!-- Taxi Light -->
+    <rect x="57" y="18" width="6" height="4" fill="#222" rx="1"/>
+    <!-- Wheels -->
+    <circle cx="35" cy="45" r="7" fill="#222"/>
+    <circle cx="85" cy="45" r="7" fill="#222"/>
+    <circle cx="35" cy="45" r="4" fill="#444"/>
+    <circle cx="85" cy="45" r="4" fill="#444"/>
+    <circle cx="35" cy="45" r="2" fill="#666"/>
+    <circle cx="85" cy="45" r="2" fill="#666"/>
+    <!-- Door Lines -->
+    <path d="M55 25 L58 32" fill="none" stroke="#000" stroke-width="1"/>
+    <path d="M65 25 L68 32" fill="none" stroke="#000" stroke-width="1"/>
+    <!-- Taxi Sign -->
+    <rect x="52" y="16" width="16" height="6" fill="#222" rx="1"/>
+    <text x="54" y="21" fill="#FFD700" font-size="5" font-weight="bold">TAXI</text>
+    <!-- Checkers -->
+    <rect x="32 " y="38" width="3" height="3" fill="#222"/>
+    <rect x="35" y="38" width="3" height="3" fill="#FFD700"/>
+    <rect x="32" y="41" width="3" height="3" fill="#FFD700"/>
+    <rect x="35" y="41" width="3" height="3" fill="#222"/>
+    <!-- Headlight -->
+    <path d="M20 38 L23 38 L23 40 L20 40 Z" fill="#fff"/>
+    <!-- Taillight -->
+    <path d="M97 38 L100 38 L100 40 L97 40 Z" fill="#ff3333"/>
+</svg>
