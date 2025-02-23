@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Easy Riders Taxi Service - Admin Panel</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="main-header">
+    <nav class="nav-container">
+      <div class="logo">
+        <a href="index.html">
+          <img src="images/logo.png" alt="Easy Riders Taxi Service" class="logo-image">
+        </a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="drivers.html">Driver Dashboard</a></li>
+        <li><a href="admin.html">Admin Panel</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <h2>Admin Panel</h2>
+    <div class="tabs">
+      <button class="tab-button active" onclick="openTab(event, 'riders')">Chat with Riders</button>
+      <button class="tab-button" onclick="openTab(event, 'drivers')">Chat with Drivers</button>
+    </div>
+    <div id="riders" class="tab-content" style="display: block;">
+      <h3>Chat with Riders</h3>
+      <div class="chat-window" id="riders-chat-window">
+        <div class="message admin">Hello, how can I assist you today?</div>
+        <div class="message rider">I need help with ride tracking.</div>
+      </div>
+      <form onsubmit="sendMessage(event, 'riders')">
+        <input type="text" id="riders-message" placeholder="Type your message for riders" required />
+        <button type="submit">Send</button>
+      </form>
+    </div>
+    <div id="drivers" class="tab-content" style="display: none;">
+      <h3>Chat with Drivers</h3>
+      <div class="chat-window" id="drivers-chat-window">
+        <div class="message admin">Please be aware of traffic conditions.</div>
+        <div class="message driver">Acknowledged, thank you!</div>
+      </div>
+      <form onsubmit="sendMessage(event, 'drivers')">
+        <input type="text" id="drivers-message" placeholder="Type your message for drivers" required />
+        <button type="submit">Send</button>
+      </form>
+    </div>
+  </main>
+  <footer>
+    <p>&copy; 2025 Easy Riders Taxi Service. All rights reserved.</p>
+  </footer>
+  <script>
+    function openTab(event, tabName) {
+      const tabContents = document.getElementsByClassName("tab-content");
+      for (let i = 0; i < tabContents.length; i++) {
+        tabContents[i].style.display = "none";
+      }
+      document.getElementById(tabName).style.display = "block";
+      const buttons = document.getElementsByClassName("tab-button");
+      for (let i = 0; i < buttons.length; i++) {
+        buttons[i].classList.remove("active");
+      }
+      event.target.classList.add("active");
+    }
+
+    function sendMessage(event, chatType) {
+      event.preventDefault();
+      var inputId = chatType === "riders" ? "riders-message" : "drivers-message";
+      var chatWindowId = chatType === "riders" ? "riders-chat-window" : "drivers-chat-window";
+      var message = document.getElementById(inputId).value;
+      if (message.trim() !== "") {
+        var chatWindow = document.getElementById(chatWindowId);
+        var newMsg = document.createElement("div");
+        newMsg.className = "message admin";
+        newMsg.textContent = message;
+        chatWindow.appendChild(newMsg);
+        document.getElementById(inputId).value = "";
+        chatWindow.scrollTop = chatWindow.scrollHeight;
+      }
+    }
+  </script>
+</body>
+</html>

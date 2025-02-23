@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Easy Riders Taxi Service - Driver Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="main-header">
+    <nav class="nav-container">
+      <div class="logo">
+        <a href="index.html">
+          <img src="images/logo.png" alt="Easy Riders Taxi Service" class="logo-image">
+        </a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="drivers.html">Driver Dashboard</a></li>
+        <li><a href="admin.html">Admin</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section id="login-section">
+      <h2>Driver Login</h2>
+      <form id="driver-login-form">
+        <label for="driver-id">Driver ID:</label>
+        <input type="text" id="driver-id" name="driver-id" required />
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required />
+        <button type="submit">Login</button>
+      </form>
+    </section>
+    <section id="dashboard" style="display: none;">
+      <h2>Driver Dashboard</h2>
+      <div id="ride-requests">
+        <h3>Available Rides</h3>
+        <ul>
+          <li>
+            <span>Ride from A to B</span>
+            <button onclick="acceptRide(this)">Accept Ride</button>
+          </li>
+          <li>
+            <span>Ride from C to D</span>
+            <button onclick="acceptRide(this)">Accept Ride</button>
+          </li>
+          <li>
+            <span>Ride from E to F</span>
+            <button onclick="acceptRide(this)">Accept Ride</button>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2025 Easy Riders Taxi Service. All rights reserved.</p>
+  </footer>
+  <script>
+    const loginForm = document.getElementById("driver-login-form");
+    const loginSection = document.getElementById("login-section");
+    const dashboard = document.getElementById("dashboard");
+
+    loginForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+      // For demo purposes, show the dashboard right away.
+      loginSection.style.display = "none";
+      dashboard.style.display = "block";
+    });
+
+    function acceptRide(button) {
+      alert("Ride accepted! Proceed to pickup.");
+      button.disabled = true;
+      button.innerText = "Accepted";
+    }
+  </script>
+</body>
+</html>
