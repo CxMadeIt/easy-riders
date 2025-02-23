@@ -61,15 +61,21 @@ function updateCountdown() {
 document.addEventListener('DOMContentLoaded', function() {
     const audioBtn = document.getElementById('toggleAudio');
     const audio = document.getElementById('bgMusic');
+    const audioIcon = audioBtn.querySelector('.audio-icon');
     let isPlaying = false;
+
+    // Set initial volume
+    audio.volume = 0.3; // 30% volume
 
     audioBtn.addEventListener('click', function() {
         if (isPlaying) {
             audio.pause();
             audioBtn.classList.remove('playing');
+            audioIcon.textContent = '▶️';
         } else {
             audio.play();
             audioBtn.classList.add('playing');
+            audioIcon.textContent = '⏸️';
         }
         isPlaying = !isPlaying;
     });
@@ -79,6 +85,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (document.hidden && isPlaying) {
             audio.pause();
             audioBtn.classList.remove('playing');
+            audioIcon.textContent = '▶️';
             isPlaying = false;
         }
     });
